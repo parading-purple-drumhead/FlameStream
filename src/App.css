@@ -1,0 +1,67 @@
+.landing {
+  position: relative;
+  overflow: hidden;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  height: calc(100vh + 100px);
+  width: calc(100vw + 100px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 20%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("./assets/album_cover.jpg") center center;
+  background-size: cover;
+
+  filter: blur(4px);
+
+  z-index: -1;
+}
+
+.landing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background: black;
+  z-index: -2;
+}
+
+.social-icon {
+  @apply size-6 fill-gray-200;
+}
+
+.album-option {
+  @apply flex items-center gap-3 border px-8 py-3 text-xl font-semibold uppercase text-gray-200 transition ease-out;
+}
+
+.album-option:hover {
+  @apply border-gray-200 bg-gray-200 text-gray-800;
+}
+
+.album-option:hover svg {
+  @apply fill-gray-800;
+}
+
+.section-title {
+  @apply text-5xl font-bold uppercase text-gray-200;
+}
+
+.track {
+  @apply mb-10 grid grid-cols-12 items-center text-lg text-gray-200;
+}
+
+.page-link {
+  @apply cursor-pointer text-2xl font-bold uppercase text-gray-200;
+}
